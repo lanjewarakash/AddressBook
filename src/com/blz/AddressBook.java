@@ -6,7 +6,7 @@ public class AddressBook {
     Contact contact = new Contact();
     Scanner scanner = new Scanner(System.in);
 
-    public void mainMenu(){
+    public void mainMenu() {
 
         boolean b = true;
         while (b) {
@@ -36,7 +36,8 @@ public class AddressBook {
             }
         }
     }
-    public void addContact(){
+
+    public void addContact() {
         System.out.println("First Name:- ");
         String firstName = scanner.next();
         contact.setFirstName(firstName);
@@ -62,28 +63,31 @@ public class AddressBook {
         System.out.println("Your Contact saved as:-");
         System.out.println(contact);
     }
+
     public void editContact() {
         System.out.println("Enter the first name of person to edit contact");
         String editName = scanner.nextLine();
-        if (editName.equals(contact.getFirstName())){
+        if (editName.equals(contact.getFirstName())) {
             addContact();
-        }else {
+        } else {
             System.out.println("Invalid Name...!!...Please Enter Valid First Name");
             editContact();
         }
     }
+
     public void deleteContact() {
         System.out.println("Enter the first name of person to delete contact");
         String editName = scanner.nextLine();
-        if (editName.equals(contact.getFirstName())){
+        if (editName.equals(contact.getFirstName())) {
             System.out.println("Deleted " + contact.getFirstName() + " Contact Successfully");
             contact = null;
         }
     }
-    public void addMultipleContact(){
+
+    public void addMultipleContact() {
         System.out.println("Enter Number of Contact to Add");
         int num = scanner.nextInt();
-        for (int i=1;i<=num;i++) {
+        for (int i = 1; i <= num; i++) {
             addContact();
         }
     }
