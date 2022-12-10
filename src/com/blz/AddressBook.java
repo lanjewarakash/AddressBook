@@ -3,53 +3,34 @@ package com.blz;
 import java.util.Scanner;
 
 public class AddressBook {
-    public static void main(String[] args) {
-        System.out.println("Welcome to Address Book Program");
+    Contact contact = new Contact();
+    Scanner scanner = new Scanner(System.in);
 
-        AddressBook ab = new AddressBook();
-        ab.setContacts();
-        ab.printContacts();
+    void addContact() {
+        System.out.println("First Name:- ");
+        String firstName = scanner.next();
+        contact.setFirstName(firstName);
+        System.out.println("Last Name:- ");
+        String lastName = scanner.next();
+        contact.setLastName(lastName);
+        System.out.println("City:- ");
+        String city = scanner.next();
+        contact.setCity(city);
+        System.out.println("State:- ");
+        String state = scanner.next();
+        contact.setState(state);
+        System.out.println("Email ID:- ");
+        String eMail = scanner.next();
+        contact.setEmail(eMail);
+        System.out.println("ZIP Code:- ");
+        int zip = scanner.nextInt();
+        contact.setZip(zip);
+        System.out.println("PhoneNo:- ");
+        long phoneNo = scanner.nextLong();
+        contact.setPhoneNo(phoneNo);
 
+        System.out.println("Your Contact saved as:-");
+        System.out.println(contact);
     }
 
-    String firstName;
-    String lastName;
-    String emailId;
-    String address;
-    String city;
-    String state;
-    String zip;
-    String phoneNumber;
-
-    public void setContacts() {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Enter First name : ");
-        firstName = sc.nextLine();
-        System.out.println("Enter lastname : ");
-        lastName = sc.nextLine();
-        System.out.println("Enter address : ");
-        address = sc.nextLine();
-        System.out.println("Enter your city : ");
-        city = sc.nextLine();
-        System.out.println("Enter State : ");
-        state = sc.nextLine();
-        System.out.println("Enter zip : ");
-        state = sc.nextLine();
-        System.out.println("Enter Phone Number : ");
-        phoneNumber = sc.nextLine();
-        System.out.println("Enter email : ");
-        emailId = sc.nextLine();
-
-    }
-
-    public void printContacts() {
-        System.out.println("firstname : " + firstName);
-        System.out.println("LastName : " + lastName);
-        System.out.println("EmailId : " + emailId);
-        System.out.println("Address :" + address);
-        System.out.println("City :" + city);
-        System.out.println("State :" + state);
-        System.out.println("Zip Code :" + zip);
-        System.out.println("Phone number :" + phoneNumber);
-    }
 }
